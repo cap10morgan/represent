@@ -7,4 +7,9 @@ class LocationsControllerTest < ActionController::TestCase
     assert_template :address_form
   end
 
+  test "address should redirect to legislators" do
+    get :index, {:addr1 => '1311 Marion St.', :addr2 => '', :city => 'Denver', 
+      :state => 'CO', :zip => '80218'}
+    assert_redirected_to '/legislators/zip/80218-2208'
+  end
 end
