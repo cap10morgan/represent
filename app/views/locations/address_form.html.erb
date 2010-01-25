@@ -1,0 +1,27 @@
+<h1>Find Your Legislators</h1>
+
+<% form_tag(:locations, :method => :get) do %>
+  <% field_set_tag 'Enter Your Address' do %>
+    <div class="addr">
+    <%= label_tag(:addr1, "Address: ") %>
+    <%= text_field_tag(:addr1, nil, :size => 32) %>
+    </div>
+    <div class="addr">
+    <%= label_tag(:addr2, "Address (cont.): ", :id => 'addr2_label') %>
+    <%= text_field_tag(:addr2, nil, :size => 32) %>
+    </div>
+    <div>
+    <%= label_tag(:city, "City: ") %>
+    <%= text_field_tag(:city, nil, :size => 12) %>
+    <%= label_tag(:state, "State: ") %>
+    <%= text_field_tag(:state, nil, :size => 2) %>
+    <%= label_tag(:zip, "ZIP Code: ") %>
+    <%= text_field_tag(:zip, nil, :size => 5) %>
+    </div>
+    <div class="submit">
+    <%= submit_tag("Find") %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', locations_path %>

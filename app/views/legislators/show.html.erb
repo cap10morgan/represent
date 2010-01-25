@@ -1,0 +1,5 @@
+<ul class="legislators">
+  <li><% if @leg.photo != '' %><img src="<%= @leg.photo %>" /><% end %><%= @leg.title %> <%= @leg.first_name %> <%= @leg.last_name %> (<%= @leg.office_parties[0,1] %>)<p><em>Bio info goes here</em></p></li>
+</ul>
+
+<%= link_to 'Back', legislators_path %>

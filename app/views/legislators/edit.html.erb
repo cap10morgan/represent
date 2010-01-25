@@ -1,0 +1,12 @@
+<h1>Editing legislator</h1>
+
+<% form_for(@legislator) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @legislator %> |
+<%= link_to 'Back', legislators_path %>

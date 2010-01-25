@@ -1,0 +1,16 @@
+<h1>Legislators for <%= @zip %></h1>
+
+<h2>Federal Legislators</h2>
+<ul class="legislators">
+<% @legislators[:federal].each do |leg| %>
+    <li><% if leg.photo != '' %><img src="<%= leg.photo %>" /><% end %><%= leg.title %> <%= leg.first_name %> <%= leg.last_name %> (<%= leg.office_parties[0,1] %>)<p>District: <%= leg.office_state_id %> <%= leg.pretty_district_name %><br /><em>Bio info goes here</em></p></li>
+<% end %>
+</ul>
+<h2>State Legislators</h2>
+<ul class="legislators">
+<% @legislators[:state].each do |leg| %>
+    <li><% if leg.photo != '' %><img src="<%= leg.photo %>" /><% end %><%= leg.title %> <%= leg.first_name %> <%= leg.last_name %> (<%= leg.office_parties[0,1] %>)<p>District: <%= leg.office_state_id %> <%= leg.pretty_district_name %><br /><em>Bio info goes here</em></p></li>
+<% end %>
+</ul>
+
+<%= link_to 'Back', legislators_path %>

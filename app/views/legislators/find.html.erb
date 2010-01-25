@@ -1,0 +1,7 @@
+<h1>Find Your Legislators</h1>
+
+<% form_tag(:legislators, :method => :get) do %>
+  <%= label_tag(:zip, "ZIP Code: ") %>
+  <%= text_field_tag(:zip) %>
+  <%= submit_tag("Find") %>
+<% end %>
